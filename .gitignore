@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+/src/file-upload-plugin/.sass-cache
 .pnp.js
 
 # testing

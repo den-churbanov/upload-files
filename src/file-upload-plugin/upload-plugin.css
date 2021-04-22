@@ -1,0 +1,87 @@
+.upload_plugin_container {
+  width: 70%;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-top: 5rem; }
+  .upload_plugin_container .card input[type="file"] {
+    display: none;
+    opacity: 0;
+    visibility: hidden; }
+  .upload_plugin_container .card {
+    border-radius: 10px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); }
+    .upload_plugin_container .card .btn {
+      color: #42b983;
+      position: relative;
+      border-radius: 99px;
+      border: 2px solid #42b983;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: .5rem 1.5rem;
+      font-weight: 700;
+      outline: none;
+      background: #fff;
+      cursor: pointer;
+      margin-right: 1rem; }
+      .upload_plugin_container .card .btn.primary {
+        background: #42b983;
+        color: #fff; }
+      .upload_plugin_container .card .btn:active {
+        box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3); }
+      .upload_plugin_container .card .btn:hover {
+        cursor: pointer;
+        opacity: 0.8; }
+    .upload_plugin_container .card .preview {
+      display: flex;
+      flex-wrap: wrap;
+      padding: .5rem; }
+    .upload_plugin_container .card .preview-image {
+      box-sizing: border-box;
+      position: relative;
+      margin-bottom: .5rem;
+      margin-right: .5rem;
+      overflow: hidden; }
+      .upload_plugin_container .card .preview-image.delete-animation {
+        transform: scale(0);
+        transition: all 300ms ease-out; }
+      .upload_plugin_container .card .preview-image:hover .preview-remove {
+        opacity: 1; }
+      .upload_plugin_container .card .preview-image:hover .preview-info {
+        bottom: 4px; }
+      .upload_plugin_container .card .preview-image img {
+        width: 180px;
+        height: auto; }
+      .upload_plugin_container .card .preview-image .preview-remove {
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: opacity .22s; }
+      .upload_plugin_container .card .preview-image .preview-info {
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        left: 0;
+        height: 25px;
+        font-size: .8rem;
+        background: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+        transition: bottom .22s; }
+        .upload_plugin_container .card .preview-image .preview-info span {
+          overflow-x: hidden; }
+
+/*# sourceMappingURL=upload-plugin.css.map */
