@@ -13,10 +13,37 @@ $btn-color: #42b983;
     }
     
     .card {
+        box-sizing: border-box;
         border-radius: 10px;
-        padding: 1rem;
         background: #fff;
         box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
+        display: flex;
+        
+        .card-wrapper {
+            width: 100%;
+            padding: 1rem;
+            
+            .loading {
+                display: block;
+                padding: .3rem;
+                margin-top: .3rem;
+                color: $btn-color;
+                font-weight: bold;
+            }
+        }
+        
+        .drop-area {
+            border-radius: 10px;
+            margin: 10px;
+            min-height: 100px;
+            width: 100%;
+            border: 3px dashed $btn-color;
+            font-weight: bold;
+            color: $btn-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         
         .btn {
             color: $btn-color;
@@ -27,10 +54,12 @@ $btn-color: #42b983;
             text-transform: uppercase;
             padding: .5rem 1.5rem;
             font-weight: 700;
+            min-width: 140px;
             outline: none;
             background: #fff;
             cursor: pointer;
             margin-right: 1rem;
+            margin-top: 0.5rem;
             
             &.primary {
                 background: $btn-color;
@@ -54,8 +83,14 @@ $btn-color: #42b983;
         .preview {
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
             padding: .5rem;
-            
+        }
+        
+        .preview-link{
+            text-decoration: none;
+            color: black;
+            cursor: zoom-in;
         }
         
         .preview-image {
@@ -64,25 +99,25 @@ $btn-color: #42b983;
             margin-bottom: .5rem;
             margin-right: .5rem;
             overflow: hidden;
-            
-            &.delete-animation{
+    
+            &.delete-animation {
                 transform: scale(0);
                 transition: all 300ms ease-out;
             }
-            
+    
             &:hover .preview-remove {
                 opacity: 1;
             }
-            
+    
             &:hover .preview-info {
                 bottom: 4px;
             }
-            
+    
             img {
                 width: 180px;
                 height: auto;
             }
-            
+    
             .preview-remove {
                 opacity: 0;
                 width: 20px;
@@ -98,7 +133,7 @@ $btn-color: #42b983;
                 cursor: pointer;
                 transition: opacity .22s;
             }
-            
+    
             .preview-info {
                 box-sizing: border-box;
                 position: absolute;
@@ -111,14 +146,41 @@ $btn-color: #42b983;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                overflow: hidden;
                 padding: 0 5px;
                 transition: bottom .22s;
-                
+        
+                &.upload {
+                    bottom: 4px;
+                }
+        
                 span {
                     overflow-x: hidden;
                 }
+        
+                .preview-info-progress {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    background: $btn-color;
+                    transition: width .22s;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             }
         }
-        
+    }
+}
+
+@media (max-width: 780px) {
+    .preview-remove{
+        opacity: 1 !important;
+    }
+    
+    .preview-info{
+        bottom: 4px !important;
     }
 }

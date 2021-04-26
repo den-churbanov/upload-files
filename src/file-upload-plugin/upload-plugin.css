@@ -8,10 +8,31 @@
     opacity: 0;
     visibility: hidden; }
   .upload_plugin_container .card {
+    box-sizing: border-box;
     border-radius: 10px;
-    padding: 1rem;
     background: #fff;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); }
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    display: flex; }
+    .upload_plugin_container .card .card-wrapper {
+      width: 100%;
+      padding: 1rem; }
+      .upload_plugin_container .card .card-wrapper .loading {
+        display: block;
+        padding: .3rem;
+        margin-top: .3rem;
+        color: #42b983;
+        font-weight: bold; }
+    .upload_plugin_container .card .drop-area {
+      border-radius: 10px;
+      margin: 10px;
+      min-height: 100px;
+      width: 100%;
+      border: 3px dashed #42b983;
+      font-weight: bold;
+      color: #42b983;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
     .upload_plugin_container .card .btn {
       color: #42b983;
       position: relative;
@@ -21,10 +42,12 @@
       text-transform: uppercase;
       padding: .5rem 1.5rem;
       font-weight: 700;
+      min-width: 140px;
       outline: none;
       background: #fff;
       cursor: pointer;
-      margin-right: 1rem; }
+      margin-right: 1rem;
+      margin-top: 0.5rem; }
       .upload_plugin_container .card .btn.primary {
         background: #42b983;
         color: #fff; }
@@ -36,7 +59,12 @@
     .upload_plugin_container .card .preview {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       padding: .5rem; }
+    .upload_plugin_container .card .preview-link {
+      text-decoration: none;
+      color: black;
+      cursor: zoom-in; }
     .upload_plugin_container .card .preview-image {
       box-sizing: border-box;
       position: relative;
@@ -79,9 +107,30 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        overflow: hidden;
         padding: 0 5px;
         transition: bottom .22s; }
+        .upload_plugin_container .card .preview-image .preview-info.upload {
+          bottom: 4px; }
         .upload_plugin_container .card .preview-image .preview-info span {
           overflow-x: hidden; }
+        .upload_plugin_container .card .preview-image .preview-info .preview-info-progress {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          background: #42b983;
+          transition: width .22s;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+
+@media (max-width: 780px) {
+  .preview-remove {
+    opacity: 1 !important; }
+
+  .preview-info {
+    bottom: 4px !important; } }
 
 /*# sourceMappingURL=upload-plugin.css.map */
